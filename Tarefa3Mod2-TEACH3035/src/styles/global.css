@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #6B2D9E;
+  --secondary-color: #8B4CBD;
+  --accent-color: #A855F7;
+  --background-light: #F5F5F0;
+  --background-white: #FFFFFF;
+  --text-dark: #2D1B4E;
+  --text-light: #666666;
+  --border-color: #E0E0E0;
+  --shadow: 0 4px 12px rgba(107, 45, 158, 0.1);
+  --success-color: #10B981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}

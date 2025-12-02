@@ -1,0 +1,45 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--background-light);
+}
+
+.app-main {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.message-box {
+  background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    padding: 2rem 1rem;
+  }
+  
+  .message-box {
+    font-size: 1rem;
+    padding: 1.2rem 1.5rem;
+  }
+}
