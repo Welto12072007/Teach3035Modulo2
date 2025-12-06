@@ -7,7 +7,6 @@ import './styles/App.css';
 
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [selectedMovie, setSelectedMovie] = useState<string>('');
 
   useEffect(() => {
     const loadMovies = async () => {
@@ -23,22 +22,24 @@ function App() {
       m.id === movie.id ? { ...m, checked: !m.checked } : m
     );
     setMovies(updatedMovies);
-
-    if (!movie.checked) {
-      setSelectedMovie(`Você selecionou: ${movie.nome}`);
-    } else {
-      setSelectedMovie('');
-    }
   };
+
+  // Filtra todos os filmes que estão selecionados
+  const selectedMovies = movies.filter(movie => movie.checked);
 
   return (
     <div className="app">
       <Header />
       
       <main className="app-main">
-        {selectedMovie && (
+        {selectedMovies.length > 0 && (
           <div className="message-box">
-            {selectedMovie}
+            <strong>Filmes selecionados:</strong>
+            <ul>
+              {selectedMovies.map(movie => (
+                <li key={movie.id}>{movie.nome}</li>
+              ))}
+            </ul>
           </div>
         )}
         
